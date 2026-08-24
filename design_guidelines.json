@@ -1,0 +1,126 @@
+{
+  "theme": "dark",
+  "archetype": "ORGANIC & EARTHY mixed with ELECTRIC & NEON (Awwwards Style)",
+  "colors": {
+    "background": "#0A0D0B",
+    "surface": "#121714",
+    "surface_glass": "rgba(18, 23, 20, 0.6)",
+    "primary": "#BAFF29",
+    "primary_hover": "#A3E622",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#9CA3AF",
+    "border": "#242E28",
+    "accent_subtle": "#1B2620"
+  },
+  "typography": {
+    "headings": {
+      "font": "Outfit, sans-serif",
+      "weights": ["300", "500", "700", "900"],
+      "classes": "font-sans tracking-tighter"
+    },
+    "body": {
+      "font": "DM Sans, sans-serif",
+      "weights": ["400", "500"],
+      "classes": "font-sans tracking-normal leading-relaxed"
+    },
+    "mono_accents": {
+      "font": "JetBrains Mono, monospace",
+      "classes": "font-mono uppercase tracking-[0.2em] text-xs"
+    }
+  },
+  "layout": {
+    "spacing_scale": "generous",
+    "grid_strategy": "Tetris/Asymmetrical for Services and Gallery",
+    "section_padding": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12"
+  },
+  "components": {
+    "header": {
+      "style": "Crystal Glassmorphism",
+      "classes": "fixed top-0 w-full z-50 backdrop-blur-xl bg-[#0A0D0B]/70 border-b border-white/10"
+    },
+    "hero": {
+      "type": "Kinetic Text + Parallax Image",
+      "overlay": "bg-black/40",
+      "animation": "framer-motion line-by-line masked reveal (overflow-hidden on text lines, y-axis translation)"
+    },
+    "cards_services": {
+      "style": "Neumorphic/Grid Border",
+      "classes": "bg-[#121714] border border-[#242E28] p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group"
+    },
+    "buttons": {
+      "primary": "bg-[#BAFF29] text-black font-semibold rounded-full px-8 py-4 hover:bg-[#A3E622] transition-colors",
+      "secondary": "border border-white/20 text-white rounded-full px-8 py-4 hover:bg-white hover:text-black transition-colors"
+    }
+  },
+  "motion_and_interactions": {
+    "smooth_scroll": "Lenis (MANDATORY)",
+    "scroll_reveals": "Framer Motion whileInView (opacity, y: 40)",
+    "marquee": "react-fast-marquee (slow, editorial style, border-y border-white/10, huge serif/display text)",
+    "image_hover": "Scale image 1.05x inside overflow-hidden clipped frame"
+  },
+  "media": {
+    "image_treatment": "Deliberate framing, subtle brightness/contrast tweaks, grayscale on hover or full color on hover. Corner radiuses max 16px or completely sharp."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1782714049135-471ff26f36ad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBsYW5kc2NhcGluZyUyMG1vZGVybiUyMGdhcmRlbnxlbnwwfHx8fDE3ODcyNjgxNTR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern building with tall cypress trees - perfect for luxury moody hero"
+    },
+    "services": [
+      {
+        "category": "Sprinkler Systems",
+        "url": "https://images.unsplash.com/photo-1781090347265-8b59f94375dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHxzcHJpbmtsZXIlMjB3YXRlcmluZyUyMGxhd24lMjBzdW5zZXR8ZW58MHx8fHwxNzg3MjY4MTU0fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "Gardening/Pruning",
+        "url": "https://images.pexels.com/photos/38936338/pexels-photo-38936338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "category": "Planting",
+        "url": "https://images.pexels.com/photos/27176068/pexels-photo-27176068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "category": "Landscaping",
+        "url": "https://images.pexels.com/photos/31737859/pexels-photo-31737859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ],
+    "gallery": [
+      "https://images.pexels.com/photos/9150612/pexels-photo-9150612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/32088969/pexels-photo-32088969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/8791454/pexels-photo-8791454.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "required_libraries": [
+    "framer-motion",
+    "@studio-freight/react-lenis",
+    "react-fast-marquee",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "accessibility": {
+    "contrast": "Ensure text over images has gradient overlays or drop shadows.",
+    "testing": "All interactive elements MUST include data-testid attribute.",
+    "motion": "Respect prefers-reduced-motion media queries."
+  },
+  "instructions_to_main_agent": [
+    "1. Setup Lenis smooth scrolling at the root of the app.",
+    "2. Use Framer Motion to create a kinetic text hero: Split 'PRECISION. NATURE. MASTERY.' into separate lines. Wrap each in an overflow-hidden div and animate the text up from y: 100%.",
+    "3. Build a dark theme page. The background must be #0A0D0B, NOT pure black.",
+    "4. For the 'Services' section, use a Bento Grid layout (1 col mobile, 3 cols desktop) with cards that feature subtle borders (#242E28) and dark surfaces.",
+    "5. Include a Numbered Manifesto section ('01. Licensed & Bonded', etc) using large typography and border-b dividers.",
+    "6. Add an infinite Marquee using react-fast-marquee with text like 'SERVING SAN JOSE CA SINCE 2003 • FREE ESTIMATES • '. Make it massive and low contrast.",
+    "7. Include a fully functional contact form (Free Estimate) at the bottom before the footer.",
+    "8. Ensure the header has a backdrop-blur and is fixed at the top.",
+    "9. Use Outfit for headings and DM Sans for body. Add font links in index.html or import in CSS.",
+    "10. Apply `data-testid` to ALL links, buttons, and form inputs."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "Do not center align text globally.",
+    "Avoid generic AI slop emojis.",
+    "Use generous spacing (py-24 to py-32 for sections).",
+    "Never use transparent headers without a blur/scrim effect.",
+    "Ensure hover states exist for all interactive elements."
+  ]
+}

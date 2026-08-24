@@ -1,0 +1,4 @@
+/* Landing page specific overrides live in components via Tailwind. */
+.App {
+    background-color: #0A0D0B;
+}

@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: manicure-garden-services
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DB_NAME
+        value: manicure_gardening
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: EMAIL_FROM_NAME
+        value: Manicure Gardening Services
+      - key: EMAIL_REPLY_TO
+        value: Rivera79ysergio@gmail.com
+      - key: OWNER_EMAIL
+        value: Rivera79ysergio@gmail.com
+      - key: ADMIN_EMAIL
+        value: Rivera79ysergio@gmail.com
+      - key: MONGO_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: EMERGENT_EMAIL_KEY
+        sync: false
+      - key: EMERGENT_LLM_KEY
+        sync: false
