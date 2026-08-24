@@ -17,5 +17,7 @@ COPY backend/requirements-prod.txt /tmp/requirements-prod.txt
 RUN pip install --no-cache-dir -r /tmp/requirements-prod.txt
 COPY backend ./backend
 COPY --from=frontend /app/frontend/build ./frontend/build
-EXPOSE 10000
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "10000", "--app-dir", "backend"]
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+EXPOSE 8080
+CMD ["/app/start.sh"]
